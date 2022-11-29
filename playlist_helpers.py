@@ -29,6 +29,9 @@ The function should return an integer value indicating how many songs there are
 The function should NOT print anything out
 '''
 
+def get_playlist_length(playlist):
+    return len(playlist)
+
 
 '''
 9.0 TODO: Define a function `called play_track`
@@ -42,3 +45,16 @@ Assuming that the third track in your playlist 'Controversy' by 'Prince'
 This function should ALSO increase the 'plays' value for that song's dictionary by 1
 So, if 'Controversy' has 0 plays so far, it should now be increased to 1
 '''
+def play_track(playlist,track = 1):
+    try:
+        song = playlist[track-1]
+        print(f"Now playing Track {track}: {song['title']} by {song['artist']}")
+        song['plays'] += 1
+    
+    except IndexError:
+        return
+    
+    
+    #print(f'Now playing Track {track}: {playlist[track-1]["title"]}')
+    #playlist[track -1]['plays']+= 1
+
